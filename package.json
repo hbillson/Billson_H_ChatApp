@@ -1,0 +1,19 @@
+{
+  "name": "hbchatapp",
+  "version": "1.0.0",
+  "description": "a fun (in theory) node build",
+  "main": "index.js",
+  "scripts": {
+    "browsersync": "browser-sync start --proxy 'localhost:5050' --files 'index.html' 'public'",
+    "nodemonapp": "nodemon app",
+    "start-dev": "npm-run-all --parallel browsersync nodemonapp",
+    "start": "node app"
+  },
+  "keywords": [],
+  "author": "Dr Evil",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.1.0"
+  }
+}
