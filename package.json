@@ -10,7 +10,7 @@
     "start": "node app"
   },
   "keywords": [],
-  "author": "Dr Evil",
+  "author": "HB",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",

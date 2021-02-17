@@ -5,4 +5,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Helvetica, arial, sans-serif;
+}
 /*# sourceMappingURL=main.css.map */
