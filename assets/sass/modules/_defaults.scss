@@ -12,3 +12,17 @@ body {
 
     font-family:$default-family;
 }
+
+.new-message {
+    padding:10px;
+    background-color:blue;
+    color:white;
+    border-radius:8px;
+    float:left;
+    clear:both;
+}
+
+.my-message {
+    background-color:green;
+    float:right;
+}

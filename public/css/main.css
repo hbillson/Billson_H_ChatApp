@@ -1,1 +1,28 @@
-*{border:none;margin:0;padding:0;box-sizing:border-box}body{background-color:#000;color:#fff;font-family:Helvetica,arial,sans-serif}/*# sourceMappingURL=main.css.map */
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(237, 239, 243);
+  color: rgb(42, 42, 44);
+  font-family: Helvetica, arial, sans-serif;
+}
+
+.new-message {
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border-radius: 8px;
+  float: left;
+  clear: both;
+}
+
+.my-message {
+  background-color: green;
+  float: right;
+}
+
+/*# sourceMappingURL=main.css.map */
