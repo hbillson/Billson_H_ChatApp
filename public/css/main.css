@@ -6,23 +6,160 @@
 }
 
 body {
-  background-color: rgb(237, 239, 243);
-  color: rgb(42, 42, 44);
+  background: linear-gradient(to top left, #ffde70 0%, #f37b0b 100%);
+  color: #fdf9f5;
   font-family: Helvetica, arial, sans-serif;
 }
 
+#container {
+  height: 100vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: flex-end;
+  width: 100vw;
+  font-size: 1em;
+}
+#container h1, #container h4, #container h6 {
+  margin-top: -10%;
+  padding: 8%;
+  font-weight: lighter;
+  font-size: 1em;
+}
+#container h1 {
+  font-size: 2.4em;
+  padding-bottom: 10%;
+}
+#container h4 {
+  padding-bottom: 10%;
+  font-size: 1.6em;
+}
+#container #login {
+  width: 100%;
+  padding-bottom: 30%;
+}
+#container #login input {
+  background-color: rgba(253, 249, 245, 0.8);
+  padding: 8%;
+  margin: 2%;
+  width: 100%;
+  border-radius: 1em;
+  color: #f37b0b;
+  opacity: 1;
+  font-size: 1em;
+}
+#container #login ::placeholder {
+  color: #f37b0b;
+  opacity: 0.4;
+  font-size: 1.1em;
+}
+#container #login input[type=submit] {
+  background-color: #f37b0b;
+  color: #fdf9f5;
+  font-size: 1em;
+  padding: 6%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#container #login p {
+  font-size: 1em;
+  transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#container #login p .login {
+  color: #f37b0b;
+  cursor: pointer;
+}
+#container #login p .login :hover {
+  color: #eb600f;
+}
+#container .messages {
+  height: 100%;
+  background-color: rgba(253, 249, 245, 0.6);
+  width: 100vw;
+  display: block;
+}
+#container .message-wrapper {
+  width: 100vw;
+  padding-bottom: 10%;
+}
+#container .message-wrapper .textbar {
+  width: 100%;
+  height: 60%;
+  display: inline-flex;
+  flex-direction: row;
+  border-radius: 10px;
+}
+#container .message-wrapper textarea {
+  width: 100%;
+  border: none;
+  padding: 4%;
+  font-size: 1.6em;
+}
+#container .message-wrapper input {
+  height: 100%;
+  width: 40%;
+  border: none;
+  background-color: #f37b0b;
+  color: #fff;
+  transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-size: 0.6em;
+}
+#container .message-wrapper input :hover {
+  background-color: #ffde70;
+}
+#container p {
+  margin-top: 7%;
+  font-size: 1.6em;
+  cursor: pointer;
+  transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#container p :hover {
+  color: #f37b0b;
+}
+
 .new-message {
-  padding: 10px;
-  background-color: blue;
+  margin: 4%;
+  width: 45%;
+  padding: 6%;
+  height: auto;
+  background-color: #c0b2ab;
   color: white;
   border-radius: 8px;
   float: left;
   clear: both;
+  overflow-wrap: break-word;
+  font-size: 0.6em;
+  text-align: left;
+}
+.new-message .name {
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
 .my-message {
-  background-color: green;
+  background-color: #ffa155;
   float: right;
+}
+.my-message .message-text {
+  text-align: right;
+}
+
+.notif-box {
+  background-color: #eb600f;
+  height: auto;
+  display: block;
+  color: #fdf9f5;
+  font-size: 0.6em;
+  width: 80%;
+  z-index: 9999;
+  position: relative;
+  top: 0;
+  transition: 3s ease;
 }
 
 /*# sourceMappingURL=main.css.map */

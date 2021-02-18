@@ -1,3 +1,17 @@
-$main-bg-color: black;
-$main-text-color: white;
-$default-family: Helvetica, arial, sans-serif;
+$orange:#f37b0b;
+$orange-darker:#eb600f;
+$yellow:#ffde70;
+$yellow-darker:#ffc353;
+$white:rgb(253, 249, 245, 1);
+$away-color:#c0b2ab;    
+
+$home-color:#ffa155;
+
+$transition-speed: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+$border:8px;
+
+$main-font: Helvetica, arial, sans-serif;
+$main-font-size: 1.6em;
+$smaller-font-size: 0.6em;
+$mid-font-size:1em;
