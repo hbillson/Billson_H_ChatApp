@@ -1,14 +1,188 @@
-
 * {
-    border:none;
-    margin:0;
-    padding:0;
+    border: none;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
+  }
+  
+  body {
+    background: linear-gradient(to top left, #ffde70 0%, #f37b0b 100%);
+    color: $white;
+    font-family: $main-font;
+  }
+  
+  #container {
+      height:100vh;
+      padding-left:10%;
+      padding-right:10%;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-items:center;
+      justify-content:flex-end;
+      width:100vw;
+      font-size:$mid-font-size;
+      h1, h4, h6 {
+          margin-top:-10%;
+          padding:8%;
+          font-weight:lighter;
+          font-size:$mid-font-size;
 
-body {
-    background-color: $main-bg-color;
-    color:$main-text-color;
+      }
 
-    font-family:$default-family;
-}
+      h1 {
+          font-size:2.4em;
+          padding-bottom:10%;
+      }
+
+      h4 {
+          padding-bottom:10%;
+          font-size:$main-font-size;
+      }
+
+
+      #login {
+          width:100%;
+          padding-bottom:30%;
+          input {
+              background-color:rgb(253, 249, 245, 0.8);
+              padding:8%;
+              margin:2%;
+              width:100%;
+              border-radius:1em;
+              color:$orange;
+              opacity:1;
+              font-size:$mid-font-size;
+          }
+
+          ::placeholder {
+            color:$orange;
+            opacity:0.4;
+            font-size:1.1em;
+        }
+
+          input[type="submit"] {
+            background-color:$orange;
+            color:$white;
+            font-size:$mid-font-size;
+            padding:6%;
+            border-radius:$border;
+            cursor:pointer;
+            transition:$transition-speed;
+          }
+
+          
+      p {
+        font-size:1em;
+        transition:$transition-speed;
+        .login {
+            color:$orange;
+            cursor:pointer;
+
+            :hover {
+                color:$orange-darker;
+            }
+        }
+    }
+
+      }
+
+      .messages {
+        height:100%;
+        background-color:rgb(253, 249, 245, 0.6);
+        width:100vw;
+        display:block;
+    }
+
+    .message-wrapper {
+        width:100vw;
+        padding-bottom:10%;
+
+
+        .textbar {
+            width:100%;
+            height:60%;
+            display:inline-flex;
+            flex-direction:row;
+            border-radius:10px;
+
+        }
+        textarea {
+            width:100%;
+            border:none;
+            padding:4%;
+            font-size:$main-font-size;
+        }
+
+        input {
+            height:100%;
+            width:40%;
+            border:none;
+            background-color:#f37b0b;
+            color:#fff;
+            transition:$transition-speed;
+            font-size: $smaller-font-size;
+            :hover {
+                background-color:#ffde70;
+            }
+        }
+    }
+
+    p {
+        margin-top:7%;
+        font-size:$main-font-size;
+        cursor: pointer;
+        transition:$transition-speed;
+
+        :hover {
+            color:$orange;
+        }
+    }
+  }
+  
+  
+  .new-message {
+    margin:4%;
+    width:45%;
+    padding:6%;
+    height:auto;
+    background-color: $away-color;
+    color: white;
+    border-radius: 8px;
+    float: left;
+    clear: both;
+    overflow-wrap:break-word;
+    font-size:$smaller-font-size;
+    text-align:left;
+
+ 
+
+    .name {
+        font-size:1.1em;
+        font-weight:600;
+    }
+  }
+  
+  .my-message {
+    background-color: $home-color;
+    float: right;
+    .message-text {
+        text-align:right;
+    }
+
+  }
+
+  .notif-box {
+      background-color:$orange-darker;
+      height:auto;
+      display:block;
+      color:$white;
+      font-size:$smaller-font-size;
+      width:80%;
+      z-index:9999;
+      position:relative;
+      top:0;
+      transition:3s  ease;
+  }
+  

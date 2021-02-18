@@ -26,14 +26,24 @@ const server = app.listen(port, () => {
 messenger.attach(server);
 
 messenger.on("connection", (socket) => {
-	console.log(`a user connected: ${socket.id}`);
+	var name = "";
 
 	// send the connected user their assigned ID
-	socket.emit('connected', { sID: `${socket.id}`, message: 'new connection'});
-	
+	socket.emit('connected', { sID: `${socket.id}`, message: 'new connection', nickname: name});
+
 	socket.on('chatmessage', function(msg) {
-		messenger.emit('message'), { id: socket.id, message: msg};
+		messenger.emit('message', { id: socket.id, message: msg});
 	});
+
+	socket.on('setname', function(user) {
+		socket.emit('set-name', {name: user.name})
+		name = user.name;
+	});
+
+	socket.on('new-joined', function(nickname) {
+		var newName = nickname.name;
+		messenger.emit('notif', {name: newName});
+	})
 
 	socket.on('disconnect', () => {
 		console.log('a user has disconnected');
