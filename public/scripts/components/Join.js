@@ -15,8 +15,7 @@ export default {
             <input type="text" name="nickname" v-model="nickname" placeholder="Create a nickname">
             <input type="password" name="password" v-model="password" placeholder="Create a password">
             <input type="submit" @click.prevent="processForm" value="JOIN" class="submit-button">
-            <p>Already a user? <br>Log in <span onclick="logIn" class="login">here</span></p>
-        </form>
+            </form>
     </div>`,
 
     mounted: ()=> {
@@ -25,7 +24,7 @@ export default {
 
     methods: {
         processForm: function() {
-            this.$emit("setuser", {username: this.username, nickname:this.nickname, password:this.password, view:"chat"});
+            this.$emit("setuser", {username: this.username, nickname:this.nickname || "Anonymous", password:this.password, view:"chat"});
         }
     }
 }

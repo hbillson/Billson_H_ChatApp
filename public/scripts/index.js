@@ -20,17 +20,7 @@ import ChatMessage from "./components/TheMessageComponent.js";
     }
 
     function appendNotif(user) {
-        var notif = document.createElement("p")
-        var node = document.createTextNode(`${user.name} has entered the chat.`);
-        notif.appendChild(node);
-
-        var notifBox = document.querySelector(".notif-box");
-        notifBox.appendChild(notif);
-
-        setTimeout(() => {
-            fadeOut(notifBox);
-        }, 1000)
-
+        vm.notifs.push(user);
     }
 
     function fadeOut(event) {
@@ -45,20 +35,25 @@ import ChatMessage from "./components/TheMessageComponent.js";
         data: {
             messages: [],
             userdata: {},
+            notifs: [],
             nickname: "",
             username: "",
             password: "",
             socketID: "",
             message: "",
             view: "join",
-            newView: "join"
+            newView: "join",
+            transition: "slide-fade"
         },
 
         computed: {
             currentComponent: function() {
                 this.newView = this.view;
                 return this.view;
-            }
+            },
+            computedTransition: function() {
+                return this.transition;
+             }
         },
 
         created: function() {
@@ -67,7 +62,6 @@ import ChatMessage from "./components/TheMessageComponent.js";
 
         methods: {
             dispatchMessage(msg) {
-                console.log(msg);
                 socket.emit('chatmessage', {content: msg.message, name: msg.nickname, id: msg.id});
                 this.message="";
             },
@@ -91,7 +85,12 @@ import ChatMessage from "./components/TheMessageComponent.js";
 
             fadeOut: function(event) {
                 console.log(event);
+            },
+
+            whisperTo(userID) {
+                socket.emit('whisper-to', {ID: userID})
             }
+            
         },
 
         components: {

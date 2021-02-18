@@ -1,21 +1,24 @@
 import ChatMessage from "./TheMessageComponent.js";
+import Notification from "./TheNotifComponent.js";
 
 export default {
-    props: ['messagelist', 'socketid', 'user'],
+    props: ['messagelist', 'socketid', 'user', 'notifications'],
     data: function() {
         return {
            message: "",
            messages: this.messagelist,
            socketID: this.socketid,
-           name: this.user.nickname
+           name: this.user.nickname,
+           notifs: this.notifications
         }
     },
     template: `
     <div id="container" class="chat">  
     <!--vue custom message component goes here-->
         <section class="messages">
-        <div class="notif-box">
-        </div>
+            <ul id="notifs" v-for="notif in notifs">
+                <notif :name="name"></notif>
+            </ul>
             <ul id="messages" v-for="message in messages">
                 <newmessage :msg="message" :socketid="socketID" :name="name"></newmessage>
             </ul>
@@ -46,6 +49,7 @@ export default {
     },
 
     components: {
-        "newmessage": ChatMessage
+        "newmessage": ChatMessage,
+        "notif": Notification
     }
 }

@@ -11,8 +11,10 @@
 <body>
     <main id="app">
         <div id="container">
-            <view :is="currentComponent" @setview="setView" @setuser="thisUser" @sendmessage="dispatchMessage" 
-            @joined="userJoined":msg="message" :socketid="socketID" :user="userdata" :messagelist="messages"></login>
+            <transition name="component-fade" mode="out-in">
+                <view :is="currentComponent" @setview="setView" @setuser="thisUser" @sendmessage="dispatchMessage" 
+            @joined="userJoined":msg="message" :socketid="socketID" :user="userdata" :messagelist="messages" :notifications="notifs"></login>
+        </transition>
         </div>
     </main>
     <script>
