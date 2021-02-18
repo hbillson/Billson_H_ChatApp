@@ -4,6 +4,14 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  .component-fade-enter-active, .component-fade-leave-active {
+    transition: opacity .3s ease;
+  }
+  .component-fade-enter, .component-fade-leave-to
+  /* .component-fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
   
   body {
     background: linear-gradient(to top left, #ffde70 0%, #f37b0b 100%);
@@ -90,9 +98,10 @@
 
       .messages {
         height:100%;
-        background-color:rgb(253, 249, 245, 0.6);
+        background-color:rgb(253, 249, 245, 0.8);
         width:100vw;
         display:block;
+        overflow-y: scroll;
     }
 
     .message-wrapper {
@@ -175,14 +184,46 @@
 
   .notif-box {
       background-color:$orange-darker;
-      height:auto;
+      height:10%;
       display:block;
       color:$white;
       font-size:$smaller-font-size;
-      width:80%;
+      width:100%;
       z-index:9999;
       position:relative;
       top:0;
       transition:3s  ease;
   }
-  
+
+  .fade-in-slide {
+     animation: fadeInSlide .6s ease-in; 
+  }
+
+  @keyframes fadeInSlide {
+      0% {
+          opacity: 0;
+          transform: translateY(10%);
+      }
+      100% {
+          opacity:1;
+          transform: translateY(0);
+      }
+  }
+
+  .fade-out {
+    animation: fadeOut 1s ease-out forwards;
+ }
+
+ @keyframes fadeOut {
+     0% {
+         opacity: 1;
+     }
+     100% {
+         opacity:0;
+     }
+ }
+
+ .hidden {
+     display:none;
+ }
+

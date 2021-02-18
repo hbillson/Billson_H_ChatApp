@@ -43,9 +43,10 @@ messenger.on("connection", (socket) => {
 	socket.on('new-joined', function(nickname) {
 		var newName = nickname.name;
 		messenger.emit('notif', {name: newName});
-	})
+	});
 
 	socket.on('disconnect', () => {
 		console.log('a user has disconnected');
-	})
+	});
+
 });
