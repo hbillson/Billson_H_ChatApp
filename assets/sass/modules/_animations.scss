@@ -1,0 +1,36 @@
+
+  .component-fade-enter-active, .component-fade-leave-active {
+    transition: opacity .3s ease;
+  }
+  .component-fade-enter, .component-fade-leave-to
+  /* .component-fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+  
+  .fade-in-slide {
+    animation: fadeInSlide .6s ease-in; 
+ }
+
+ @keyframes fadeInSlide {
+     0% {
+         opacity: 0;
+         transform: translateY(10%);
+     }
+     100% {
+         opacity:1;
+         transform: translateY(0);
+     }
+ }
+
+ .fade-out {
+   animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity:0;
+    }
+}
