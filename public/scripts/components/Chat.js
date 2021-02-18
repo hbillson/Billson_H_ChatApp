@@ -30,7 +30,7 @@ export default {
                 <input @click.prevent="dispatchMessage" type="submit" value="SEND">
                
             </div>
-            <p @click="goHome">LOG OUT</p>
+            <p class="logout" @click="goHome">LOG OUT</p>
         </section>
     </div>`,
 
