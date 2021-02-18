@@ -8,8 +8,8 @@ export default {
         }
     },
     template: `
-        <div><h4>Want to join the chat?<br/> Add a username and password!</h4>
-        <h6>To remain anonymous, leave both fields empty.</h6>
+        <div class="join"><h4>Want to join the chat?<br/> Add a username and password!</h4>
+        <h6>To remain anonymous, leave all fields empty.</h6>
         <form id="login">
             <input type="text" name="username" v-model="username"   placeholder="Create a username">
             <input type="text" name="nickname" v-model="nickname" placeholder="Create a nickname">

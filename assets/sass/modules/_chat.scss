@@ -25,6 +25,7 @@
         border:none;
         padding:4%;
         font-size:$main-font-size;
+        font-family:$main-font;
     }
 
     input {
@@ -34,7 +35,8 @@
         background-color:$orange;
         color:$white;
         transition:$transition-speed;
-        font-size: $smaller-font-size;
+        font-size: 4vw;
+        cursor:pointer;
     }
 
     input:hover {
@@ -42,19 +44,25 @@
     }
 }
 
-p {
-    margin-top:7%;
-    font-size:$main-font-size;
-    cursor: pointer;
-    transition:$transition-speed;
 
-    :hover {
-        color:$orange;
-    }
+.logout {
+    background-color:purple;
+    height:70%;
+    width:100%;
+    margin-top:0;
+    padding-top:7%;
+    font-size:5vw;
+    transition:$transition-speed;
+    cursor:pointer;
+}
+
+.logout:hover {
+    background-color:$orange;
 }
 
 .new-message {
-    margin:4%;
+    margin-right:4%;
+    margin-top:4%;
     width:45%;
     padding:6%;
     height:auto;
@@ -66,10 +74,15 @@ p {
     overflow-wrap:break-word;
     font-size:$smaller-font-size;
     text-align:left;
-
+    font-size:4vw;
     .name {
-        font-size:1.1em;
+        font-size:5vw;
         font-weight:600;
+    }
+
+    p {
+        padding:2%;
+        margin-bottom:4%;
     }
 }
 
@@ -84,13 +97,19 @@ p {
 
 .notif-box {
     background-color:$orange-darker;
-    height:10%;
+    height:5%;
     display:block;
     color:$white;
     font-size:$smaller-font-size;
     width:100%;
     z-index:9999;
-    position:relative;
+    position:fixed;
     top:0;
     transition:3s  ease;
+
+    p {
+        margin-top:0;
+        font-size:2vw;
+    }
+    
 }

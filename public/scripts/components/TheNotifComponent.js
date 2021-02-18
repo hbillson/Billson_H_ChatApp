@@ -8,18 +8,19 @@ export default {
     },
 
     template: `
-    <div class="notif-box">{{name}} has entered the chat.
+    <div class="notif-box"><p>{{name}} has entered the chat.</p>
     </div>`,
 
     mounted: function() {
         var thisnotif = this.$el;
+        thisnotif.style.display="block";
         thisnotif.classList.add("fade-in-slide");
 
         setTimeout(() => {
             thisnotif.classList.add("fade-out");
         }, 1000);
         setTimeout(() => {
-            thisnotif.classList.add("hidden");
+            thisnotif.style.display="none";
         }, 2000);
 
     },

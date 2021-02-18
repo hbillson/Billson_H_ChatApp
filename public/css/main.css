@@ -54,22 +54,21 @@ body {
   padding: 8%;
   margin: 2%;
   width: 100%;
-  border-radius: 1em;
+  border-radius: 10px;
   color: #f37b0b;
   opacity: 1;
-  font-size: 1em;
+  font-size: 3vw;
 }
 #login input ::placeholder {
   color: #f37b0b;
   opacity: 0.4;
-  font-size: 1.1em;
 }
 #login input[type=submit] {
   background-color: #f37b0b;
   color: #fdf9f5;
   font-size: 1em;
   padding: 6%;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -101,6 +100,7 @@ body {
   border: none;
   padding: 4%;
   font-size: 1.6em;
+  font-family: Helvetica, arial, sans-serif;
 }
 .message-wrapper input {
   height: 100%;
@@ -109,24 +109,31 @@ body {
   background-color: #f37b0b;
   color: #fdf9f5;
   transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-  font-size: 0.6em;
+  font-size: 4vw;
+  cursor: pointer;
 }
 .message-wrapper input:hover {
   background-color: #ffde70;
 }
 
-p {
-  margin-top: 7%;
-  font-size: 1.6em;
-  cursor: pointer;
+.logout {
+  background-color: purple;
+  height: 70%;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 7%;
+  font-size: 5vw;
   transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
 }
-p :hover {
-  color: #f37b0b;
+
+.logout:hover {
+  background-color: #f37b0b;
 }
 
 .new-message {
-  margin: 4%;
+  margin-right: 4%;
+  margin-top: 4%;
   width: 45%;
   padding: 6%;
   height: auto;
@@ -138,10 +145,15 @@ p :hover {
   overflow-wrap: break-word;
   font-size: 0.6em;
   text-align: left;
+  font-size: 4vw;
 }
 .new-message .name {
-  font-size: 1.1em;
+  font-size: 5vw;
   font-weight: 600;
+}
+.new-message p {
+  padding: 2%;
+  margin-bottom: 4%;
 }
 
 .my-message {
@@ -154,15 +166,19 @@ p :hover {
 
 .notif-box {
   background-color: #eb600f;
-  height: 10%;
+  height: 5%;
   display: block;
   color: #fdf9f5;
   font-size: 0.6em;
   width: 100%;
   z-index: 9999;
-  position: relative;
+  position: fixed;
   top: 0;
   transition: 3s ease;
+}
+.notif-box p {
+  margin-top: 0;
+  font-size: 2vw;
 }
 
 .component-fade-enter-active, .component-fade-leave-active {
@@ -198,6 +214,174 @@ p :hover {
   100% {
     opacity: 0;
   }
+}
+/* tablet defaults */
+@media screen and (min-width: 768px) {
+  #container {
+    flex-direction: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+  }
+
+  #login {
+    margin: auto;
+    padding-bottom: 20%;
+    width: 60%;
+  }
+  #login input {
+    font-size: 2.2vw;
+  }
+
+  .message-wrapper {
+    padding-bottom: 0%;
+    height: 10%;
+  }
+  .message-wrapper .textbar {
+    height: 100%;
+  }
+  .message-wrapper textarea {
+    height: 100%;
+    padding: 5%;
+    margin: 0;
+    font-size: 2.5vw;
+  }
+  .message-wrapper input {
+    height: 100%;
+    font-size: 3vw;
+  }
+
+  .logout {
+    position: fixed;
+    height: auto;
+    width: auto;
+    top: 2%;
+    right: 4%;
+    padding: 2%;
+    font-size: 3vw;
+    margin: auto;
+    background-color: purple;
+    color: #fdf9f5;
+    transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 10px;
+    opacity: 0.6;
+  }
+
+  .logout:hover {
+    background-color: #f37b0b;
+    opacity: 1;
+  }
+
+  .new-message {
+    margin: 2%;
+    margin-right: 2%;
+    padding: 2%;
+  }
+  .new-message p {
+    margin-top: 0;
+    padding: 2%;
+    font-size: 2.2vw;
+    margin-bottom: 0;
+  }
+  .new-message .name {
+    font-size: 2.5vw;
+    font-weight: 600;
+  }
+}
+.notif-box {
+  padding: 2%;
+  font-size: 2vw;
+  display: none;
+}
+
+/* medium desktop defaults */
+@media screen and (min-width: 1024px) {
+  #container {
+    flex-direction: center;
+  }
+  #container h1, #container h4, #container h6 {
+    padding: 2%;
+    margin-top: 0;
+  }
+  #container h4 {
+    font-size: xx-large;
+  }
+  #container h6 {
+    font-size: larger;
+  }
+
+  #login {
+    padding-top: 2%;
+    width: 60%;
+    padding-bottom: 0;
+  }
+  #login input {
+    font-size: 2vw;
+  }
+  #login input[type=submit] {
+    font-size: 2vw;
+  }
+}
+/* large desktop defaults */
+@media screen and (min-width: 1500px) {
+  #container {
+    flex-direction: center;
+  }
+  #container h1, #container h4, #container h6 {
+    padding: 2%;
+    margin-top: 0;
+  }
+
+  #login {
+    padding-top: 2%;
+    width: 45%;
+    padding-bottom: 0;
+  }
+  #login input {
+    font-size: 1vw;
+  }
+  #login input[type=submit] {
+    font-size: 1.4vw;
+  }
+
+  .message-wrapper {
+    height: 15%;
+  }
+  .message-wrapper .textbar {
+    height: 100%;
+  }
+  .message-wrapper textarea {
+    padding: 2%;
+    font-size: 1vw;
+  }
+  .message-wrapper input {
+    width: 10%;
+    font-size: 1.4vw;
+  }
+
+  .logout {
+    padding: 1%;
+    font-size: 1.2vw;
+  }
+
+  .logout:hover {
+    background-color: #f37b0b;
+    opacity: 1;
+  }
+
+  .new-message p {
+    padding: 1%;
+    font-size: 1vw;
+  }
+  .new-message .name {
+    font-size: 1.2vw;
+  }
+}
+.notif-box {
+  vertical-align: middle;
+  padding: 2%;
+  font-size: 1vw;
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
