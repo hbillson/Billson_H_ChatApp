@@ -1,0 +1,35 @@
+
+#login {
+    width:100%;
+    padding-bottom:30%;
+    input {
+        background-color:rgb(253, 249, 245, 0.8);
+        padding:8%;
+        margin:2%;
+        width:100%;
+        border-radius:1em;
+        color:$orange;
+        opacity:1;
+        font-size:$mid-font-size;
+        
+    ::placeholder {
+        color:$orange;
+        opacity:0.4;
+        font-size:1.1em;
+        }
+    }
+
+    input[type="submit"] {
+        background-color:$orange;
+        color:$white;
+        font-size:$mid-font-size;
+        padding:6%;
+        border-radius:$border;
+        cursor:pointer;
+        transition:$transition-speed;
+    }
+
+    input[type="submit"]:hover {
+        background-color:$orange-darker;
+    }
+}
